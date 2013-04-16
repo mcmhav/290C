@@ -14,9 +14,9 @@
 
 #define p (menuState==procB)
 
-mtype = {menu, procA, procB, general,A1,A2,A3,B1,B2,B3};
-mtype menuState;
-mtype Event;
+mtype = {menu, procA, procB, general,A1,A2,A3,B1,B2,B3};  /* List of all states from fig13*/
+mtype menuState;  /* We can have 2 states simultaneously so we need one for menu and one for photo*/
+mtype Event;			/* This is used to alternate between different events*/
 mtype photoState;
 
 
@@ -55,6 +55,7 @@ proctype ev(chan inp; chan out)
 {
 	/*
 		Events to handle state-switching 
+		Since promela picks 
 		Only use the three events: "menu, procA and procB"
 		Could have made a "next"-event, but this would mean to implement an
 		extra event, which can be avoided with this model.
@@ -69,10 +70,14 @@ proctype ev(chan inp; chan out)
 
 init 
 {
-	menuState = menu;
+	/*init the states and events to what we specified by fig13*/
+	menuState = menu;		
 	Event = procA;
 	photoState = general;
-	run men();
-	run photo();
+
+	atomic {
+		run men();
+		run photo();
+	};
 	run ev()
 }
