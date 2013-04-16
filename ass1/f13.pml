@@ -35,7 +35,8 @@ proctype photo(chan inp; chan out)
 {
 	/* 
 		The photo frame of the page.
-		
+		When the procA/procB event occurs we step to the next picture
+		as long as we are in the right state. Else we switch over.
 	*/
 	do
 	:: (photoState==general && Event==procA) -> photoState=A1;
