@@ -10,13 +10,13 @@ push:
 	git add -u && git commit -m "autopush" && git push
 
 run13:	
-	$(SPIN) -a f13.pml
+	spin -a f13.pml
 	gcc pan.c -o f13
 	clear
 	./f13
 
 run18:
-	$(SPIN) -a f18.pml
+	spin -a f18.pml
 	gcc pan.c -o f18
 	clear
 	./f18

@@ -20,7 +20,7 @@ mtype Event;			/* This is used to alternate between different events*/
 mtype photoState;
 
 
-proctype men(chan inp; chan out)
+proctype men()
 {
 	/* The menu frame of the page*/
 	do
@@ -31,7 +31,7 @@ proctype men(chan inp; chan out)
 	od
 }
 
-proctype photo(chan inp; chan out)
+proctype photo()
 {
 	/* 
 		The photo frame of the page.
@@ -52,7 +52,7 @@ proctype photo(chan inp; chan out)
 	od
 }
 
-proctype ev(chan inp; chan out)
+proctype ev()
 {
 	/*
 		Events to handle state-switching 
@@ -67,7 +67,6 @@ proctype ev(chan inp; chan out)
 	:: Event = procB;
 	od
 }
-
 
 init 
 {

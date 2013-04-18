@@ -1,86 +1,146 @@
 /* f18 */
 
-#define state1 menuState==menu
-#define stateJ4 javaState==animation
-#define stateJ1 javaState==highlightA
-#define stateJ2 javaState==highlightB
-#define stateJ3 javaState==highlightC
+#define state1 state==agreementS
+#define state2 state==notAgreeS
+#define state3 state==agreeS
 
-#define stateD1 displayState==A
-#define stateD2 displayState==B
-#define stateD3 displayState==C
+#define state4 state==menuPageS
+#define state5 state==animationS
+#define state6 state==hlAS
+#define state7 state==hlBS
+#define state8 state==hlCS
 
-#define stateA4 agrState==agreement
-#define stateA5 agreementState==notAgree
-#define stateA6 agreementState==agree
+#define state9 state==AS
+#define state10 state==BS
+#define state11 state==CS
 
-#define p (javaState==highlightB)
+#define p (state==AS)
+#define q (state==CS)
 
-mtype = {menu, procA, procB, general,A1,A2,A3,B1,B2,B3};  /* List of all states from fig13*/
-mtype menuState;  /* We can have 2 states simultaneously so we need one for menu and one for photo*/
-mtype Event;			/* This is used to alternate between different events*/
-mtype photoState;
+/* Used for events and used to check for states with p */
+mtype = {check, uncheck, menu, dispA, dispB, dispC, moA, moB, moC, mc, 
+		agreementS, notAgreeS, agreeS, menuPageS, animationS, hlAS, hlBS,
+		hlCS, AS, BS, CS} 
 
+mtype state;
 
-proctype men(chan inp; chan out)
+/* 
+	The agreement state with its 3 states and their possible actions
+*/
+proctype agreem()
 {
-	/* The menu frame of the page*/
-	do
-	:: (menuState==menu && Event==procA) -> menuState=procA;
-	:: (menuState==menu && Event==procB) -> menuState=procB;
-	:: (menuState==procA) -> menuState=menu;
-	:: (menuState==procB) -> menuState=menu;
-	od
+agreement:
+	state = agreementS;
+	goto notAgree;
+
+notAgree: 
+	state = notAgreeS;
+	if
+	:: check -> goto agree
+	fi;
+
+agree: 
+	state = agreeS;
+	if
+	:: uncheck -> goto notAgree
+	:: menu -> run men()
+	fi
 }
 
-proctype photo(chan inp; chan out)
+/*
+	The menu state
+	This initializes the two states JAVA and display to run atomic
+*/
+proctype men()
 {
-	/* 
-		The photo frame of the page.
-		When the procA/procB event occurs we step to the next picture
-		as long as we are in the right state. Else we switch over.
-	*/
-	do
-	:: (photoState==general && Event==procA) -> photoState=A1;
-	:: (photoState==general && Event==procB) -> photoState=B1;
-	:: (photoState==A1 && Event==procA) -> photoState=A2;
-	:: (photoState==A2 && Event==procA) -> photoState=A3;
-	:: (photoState==B1 && Event==procB) -> photoState=B2;
-	:: (photoState==B2 && Event==procB) -> photoState=B3;
-	:: ((photoState==A1 || photoState==A2 || photoState==A3) && Event==procB) -> photoState=B1;
-	:: ((photoState==B1 || photoState==B2 || photoState==B3) && Event==procA) -> photoState=A1;
-	:: ((photoState==A1 || photoState==A2 || photoState==A3) && Event==menu) -> photoState=general;
-	:: ((photoState==B1 || photoState==B2 || photoState==B3) && Event==menu) -> photoState=general;
-	od
+menuPage: 
+	state = menuPageS;
+	atomic {
+		run JAVA();
+		run display()
+	};
 }
 
-proctype ev(chan inp; chan out)
+
+/*
+	The java state, initialized with the animations, and enters from there
+	the highlightA state, moves between the different states based on the 
+	different events.
+*/
+proctype JAVA()
 {
-	/*
-		Events to handle state-switching 
-		Since promela picks 
-		Only use the three events: "menu, procA and procB"
-		Could have made a "next"-event, but this would mean to implement an
-		extra event, which can be avoided with this model.
-	*/
-	do
-	:: Event = menu;
-	:: Event = procA;
-	:: Event = procB;
-	od
+animation:
+	state = animationS;
+	goto hlA;
+
+hlA:
+	state = hlAS;
+	if
+	:: (dispA || mc) -> goto hlA 
+	:: moB -> goto hlB
+	:: moC -> goto hlC
+	fi;
+
+hlB:
+	state = hlBS;
+	if
+	:: (mc || dispB) -> goto hlB
+	:: moC -> goto hlC
+	:: moA -> goto hlA
+	fi;
+
+hlC:
+	state = hlCS;
+	if
+	:: (mc || dispC) -> goto hlC
+	:: moB -> goto hlB
+	:: moA -> goto hlA
+	fi
 }
+
+/*
+	The display states. Starts with the A state, and shifts based on 
+	the events triggered. This depends on that A is always triggered first 
+	though. But based on the "Test examples" from spin's web page, the
+	first state in a proctype is run first.
+*/
+proctype display()
+{
+A:
+	state = AS;
+	if
+	:: dispB -> goto B
+	:: dispC -> goto C
+	fi;
+
+B:
+	state = BS;
+	if
+	:: dispC -> goto C
+	:: dispA -> goto A
+	fi;
+
+C:
+	state = CS;
+	if
+	:: dispB -> goto B
+	:: dispA -> goto A
+	fi;
+}
+
+never  {    /* ! p U q */
+T0_init:
+	do
+	:: atomic { ((q)) -> assert(!((q))) }
+	:: (! ((p))) -> goto T0_init
+	od;
+accept_all:
+	skip
+}
+
 
 
 init 
 {
-	/*init the states and events to what we specified by fig13*/
-	menuState = menu;		
-	Event = procA;
-	photoState = general;
-
-	atomic {
-		run men();
-		run photo();
-	};
-	run ev()
+	run agreem();
 }
