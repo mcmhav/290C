@@ -1,0 +1,384 @@
+E, [2013-05-06T09:54:20.356409 #7452] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T09:54:20.360319 #7452] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T09:54:20.360880 #7452] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T09:54:20.361485 #7452] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T09:54:20.361670 #7452] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T09:55:05.894901 #7479] ERROR -- : Error 3 while setting up transitive relation for Todo (relation: predecessors)
+E, [2013-05-06T09:55:05.895456 #7479] ERROR -- : Error 3 while setting up transitive relation for Todo (relation: successors)
+E, [2013-05-06T09:55:05.895626 #7479] ERROR -- : Error 2 while setting up transitive relation for Todo (relation: uncompleted_predecessors) in local factblock 
+E, [2013-05-06T09:55:05.895764 #7479] ERROR -- : Error 2 while setting up transitive relation for Todo (relation: pending_successors) in local factblock 
+E, [2013-05-06T09:55:05.896137 #7479] ERROR -- : Error 3 while setting up transitive relation for Tag (relation: taggable)
+W, [2013-05-06T09:55:05.897274 #7479]  WARN -- : Warning: Failed to find a matching relation for PendingSuccessor_1.todo in Todo
+W, [2013-05-06T09:55:05.897340 #7479]  WARN -- : Warning: Failed to find a matching relation for UncompletedPredecessor_0.todo in Todo
+W, [2013-05-06T09:55:05.897676 #7479]  WARN -- : Error 5: Some ambiguitity while creating delete predicate for Context
+E, [2013-05-06T09:57:17.986712 #7491] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T09:57:17.989684 #7491] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T09:57:17.990129 #7491] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T09:57:17.990672 #7491] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T09:57:17.990859 #7491] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:01:39.551436 #8459] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:01:39.554455 #8459] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:01:39.554902 #8459] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:01:39.555396 #8459] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:01:39.555555 #8459] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+W, [2013-05-06T10:01:59.496445 #8466]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:01:59.496811 #8466]  WARN -- : Warning: Failed to find a matching relation for Changeset.issues in Issue
+E, [2013-05-06T10:01:59.500843 #8466] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:02:21.877007 #8473] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+W, [2013-05-06T10:02:21.878522 #8473]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:02:21.878971 #8473]  WARN -- : Warning: Failed to find a matching relation for Issue.relations_to in IssueRelation
+W, [2013-05-06T10:02:21.879015 #8473]  WARN -- : Warning: Failed to find a matching relation for Issue.relations_from in IssueRelation
+W, [2013-05-06T10:02:21.879097 #8473]  WARN -- : Warning: Failed to find a matching relation for Issue.time_entries in TimeEntry
+W, [2013-05-06T10:02:21.879134 #8473]  WARN -- : Warning: Failed to find a matching relation for Journalized.journals in Journal
+W, [2013-05-06T10:02:21.881369 #8473]  WARN -- : Warning: Failed to find a matching relation for Group.users in User
+W, [2013-05-06T10:02:21.881440 #8473]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.trackers in Tracker
+W, [2013-05-06T10:02:21.881465 #8473]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:02:21.892907 #8473] ERROR -- : Error 4 while creating delete predicate for Issue [1, "Journal", "journals"]
+E, [2013-05-06T10:02:21.892949 #8473] ERROR -- : Error 4 while creating delete predicate for Issue [0, "TimeEntry", "time_entries"]
+E, [2013-05-06T10:02:21.892979 #8473] ERROR -- : Error 4 while creating delete predicate for Issue [0, "IssueRelation", "relations_from"]
+E, [2013-05-06T10:02:21.893007 #8473] ERROR -- : Error 4 while creating delete predicate for Issue [0, "IssueRelation", "relations_to"]
+E, [2013-05-06T10:02:21.897039 #8473] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:02:38.707734 #8488] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:02:53.379991 #8499] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:02:53.380651 #8499] ERROR -- : Error 3 while setting up transitive relation for Role (relation: members)
+E, [2013-05-06T10:03:10.507811 #8507] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+W, [2013-05-06T10:03:10.509502 #8507]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:03:10.509859 #8507]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:03:10.510191 #8507]  WARN -- : Warning: Failed to find a matching relation for Issue.time_entries in TimeEntry
+W, [2013-05-06T10:03:10.510845 #8507]  WARN -- : Warning: Failed to find a matching relation for Journal.details in JournalDetail
+W, [2013-05-06T10:03:10.510943 #8507]  WARN -- : Warning: Failed to find a matching relation for Group.users in User
+W, [2013-05-06T10:03:10.510984 #8507]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.trackers in Tracker
+W, [2013-05-06T10:03:10.511008 #8507]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:03:10.515903 #8507] ERROR -- : Error 4 while creating delete predicate for Journal [0, "JournalDetail", "details"]
+E, [2013-05-06T10:03:10.529751 #8507] ERROR -- : Error 4 while creating delete predicate for Journal [0, "JournalDetail", "details"]
+E, [2013-05-06T10:03:10.529851 #8507] ERROR -- : Error 4 while creating delete predicate for Issue [0, "TimeEntry", "time_entries"]
+E, [2013-05-06T10:03:10.537160 #8507] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:03:33.775097 #8522] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+W, [2013-05-06T10:03:33.776681 #8522]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:03:33.776988 #8522]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:03:33.777272 #8522]  WARN -- : Warning: Failed to find a matching relation for Issue.time_entries in TimeEntry
+W, [2013-05-06T10:03:33.777948 #8522]  WARN -- : Warning: Failed to find a matching relation for Group.users in User
+W, [2013-05-06T10:03:33.777977 #8522]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.trackers in Tracker
+W, [2013-05-06T10:03:33.778000 #8522]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:03:33.795955 #8522] ERROR -- : Error 4 while creating delete predicate for Issue [0, "TimeEntry", "time_entries"]
+E, [2013-05-06T10:03:33.803842 #8522] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:03:44.901668 #8529] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+W, [2013-05-06T10:03:44.903643 #8529]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:03:44.903999 #8529]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:03:44.904329 #8529]  WARN -- : Warning: Failed to find a matching relation for Issue.time_entries in TimeEntry
+W, [2013-05-06T10:03:44.906923 #8529]  WARN -- : Warning: Failed to find a matching relation for Group.users in User
+W, [2013-05-06T10:03:44.906971 #8529]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.trackers in Tracker
+W, [2013-05-06T10:03:44.907028 #8529]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:03:44.925063 #8529] ERROR -- : Error 4 while creating delete predicate for Issue [0, "TimeEntry", "time_entries"]
+E, [2013-05-06T10:03:44.932681 #8529] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:03:59.269103 #8536] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:06:52.198836 #8557] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:06:52.202250 #8557] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:06:52.202783 #8557] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:06:52.203331 #8557] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:06:52.203560 #8557] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:07:39.787193 #8562] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:07:39.790279 #8562] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:07:39.790799 #8562] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:07:39.791281 #8562] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:07:39.791553 #8562] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:08:07.511232 #8569] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+W, [2013-05-06T10:08:07.512931 #8569]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:08:07.513255 #8569]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:08:07.513561 #8569]  WARN -- : Warning: Failed to find a matching relation for Issue.time_entries in TimeEntry
+W, [2013-05-06T10:08:07.516030 #8569]  WARN -- : Warning: Failed to find a matching relation for Group.users in User
+W, [2013-05-06T10:08:07.516073 #8569]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.trackers in Tracker
+W, [2013-05-06T10:08:07.516097 #8569]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:08:07.534075 #8569] ERROR -- : Error 4 while creating delete predicate for Issue [0, "TimeEntry", "time_entries"]
+E, [2013-05-06T10:08:07.542562 #8569] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:11:03.758306 #8594] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:11:25.262610 #8601] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:11:25.265871 #8601] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:11:25.266414 #8601] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:11:25.266986 #8601] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:11:25.267237 #8601] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:13:03.367214 #8606] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:13:03.367898 #8606] ERROR -- : Error 3 while setting up transitive relation for Role (relation: members)
+E, [2013-05-06T10:13:11.503053 #8610] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:14:30.224664 #8636] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:14:30.227902 #8636] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:14:30.228432 #8636] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:14:30.229104 #8636] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:14:30.229390 #8636] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:15:57.735808 #8687] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:17:34.570294 #8698] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:17:34.570713 #8698] ERROR -- : Error 2 while setting up transitive relation for Member (relation: roles) in local factblock 
+E, [2013-05-06T10:17:34.570958 #8698] ERROR -- : Error 2 while setting up transitive relation for Role (relation: members) in local factblock 
+E, [2013-05-06T10:17:34.571256 #8698] ERROR -- : Error 2 while setting up transitive relation for Principal (relation: projects) in local factblock 
+E, [2013-05-06T10:17:34.571462 #8698] ERROR -- : Error 2 while setting up transitive relation for Project (relation: users) in local factblock 
+E, [2013-05-06T10:17:34.571684 #8698] ERROR -- : Error 2 while setting up transitive relation for Project (relation: principals) in local factblock 
+E, [2013-05-06T10:17:34.571951 #8698] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:18:03.750232 #8712] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:18:03.750984 #8712] ERROR -- : Error 3 while setting up transitive relation for Role (relation: members)
+E, [2013-05-06T10:19:28.155911 #8737] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:19:28.159364 #8737] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:19:28.159898 #8737] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:19:28.160429 #8737] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:19:28.160693 #8737] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:20:31.493447 #8755] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:20:31.497063 #8755] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:20:31.497749 #8755] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:20:31.498348 #8755] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:20:31.498746 #8755] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:20:55.234623 #8761] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:20:55.237481 #8761] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:20:55.238008 #8761] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:20:55.238569 #8761] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:20:55.238859 #8761] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:22:06.932544 #8787] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:22:06.933320 #8787] ERROR -- : Error 3 while setting up transitive relation for Member (relation: roles)
+W, [2013-05-06T10:22:06.935218 #8787]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:22:06.935586 #8787]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:22:06.935917 #8787]  WARN -- : Warning: Failed to find a matching relation for Issue.time_entries in TimeEntry
+W, [2013-05-06T10:22:06.936807 #8787]  WARN -- : Warning: Failed to find a matching relation for Group.users in User
+W, [2013-05-06T10:22:06.936833 #8787]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.trackers in Tracker
+W, [2013-05-06T10:22:06.936853 #8787]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:22:06.958987 #8787] ERROR -- : Error 4 while creating delete predicate for Issue [0, "TimeEntry", "time_entries"]
+E, [2013-05-06T10:22:06.967830 #8787] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:22:57.594010 #8791] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:22:57.594586 #8791] ERROR -- : Error 3 while setting up transitive relation for Member (relation: roles)
+W, [2013-05-06T10:22:57.596214 #8791]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:22:57.596565 #8791]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:22:57.596915 #8791]  WARN -- : Warning: Failed to find a matching relation for Issue.time_entries in TimeEntry
+W, [2013-05-06T10:22:57.597791 #8791]  WARN -- : Warning: Failed to find a matching relation for Group.users in User
+W, [2013-05-06T10:22:57.597829 #8791]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.trackers in Tracker
+W, [2013-05-06T10:22:57.597853 #8791]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:22:57.620067 #8791] ERROR -- : Error 4 while creating delete predicate for Issue [0, "TimeEntry", "time_entries"]
+E, [2013-05-06T10:22:57.628834 #8791] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:23:27.595683 #8807] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:23:27.596241 #8807] ERROR -- : Error 3 while setting up transitive relation for Member (relation: roles)
+W, [2013-05-06T10:23:27.598148 #8807]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:23:27.598871 #8807]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:23:27.599213 #8807]  WARN -- : Warning: Failed to find a matching relation for Issue.time_entries in TimeEntry
+W, [2013-05-06T10:23:27.600172 #8807]  WARN -- : Warning: Failed to find a matching relation for Group.users in User
+W, [2013-05-06T10:23:27.600202 #8807]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.trackers in Tracker
+W, [2013-05-06T10:23:27.600226 #8807]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:23:27.635462 #8807] ERROR -- : Error 4 while creating delete predicate for Issue [0, "TimeEntry", "time_entries"]
+E, [2013-05-06T10:23:27.646869 #8807] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:23:50.848052 #8825] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:23:50.851132 #8825] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:23:50.851660 #8825] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:23:50.852230 #8825] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:23:50.852698 #8825] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:24:11.818906 #8830] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:24:11.821952 #8830] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:24:11.822476 #8830] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:24:11.823012 #8830] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:24:11.823217 #8830] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:24:38.325644 #8835] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:24:38.326290 #8835] ERROR -- : Error 3 while setting up transitive relation for Member (relation: roles)
+E, [2013-05-06T10:24:38.326858 #8835] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:24:38.327364 #8835] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:24:38.327868 #8835] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:24:38.328061 #8835] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:24:48.281090 #8849] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:24:48.284701 #8849] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:24:48.285348 #8849] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:24:48.285894 #8849] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:24:48.286138 #8849] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:25:04.693818 #8861] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:25:04.697029 #8861] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:25:04.697557 #8861] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:25:04.698058 #8861] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:25:04.698285 #8861] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:25:56.957283 #8876] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:25:56.957823 #8876] ERROR -- : Error 3 while setting up transitive relation for Member (relation: roles)
+E, [2013-05-06T10:25:56.958305 #8876] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:25:56.958752 #8876] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:25:56.959237 #8876] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:25:56.959439 #8876] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:26:09.133209 #8884] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:26:09.133753 #8884] ERROR -- : Error 3 while setting up transitive relation for Member (relation: roles)
+W, [2013-05-06T10:26:09.135577 #8884]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:26:09.136255 #8884]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:26:09.136561 #8884]  WARN -- : Warning: Failed to find a matching relation for Issue.time_entries in TimeEntry
+W, [2013-05-06T10:26:09.137416 #8884]  WARN -- : Warning: Failed to find a matching relation for Group.users in User
+W, [2013-05-06T10:26:09.137442 #8884]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.trackers in Tracker
+W, [2013-05-06T10:26:09.137463 #8884]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:26:09.172128 #8884] ERROR -- : Error 4 while creating delete predicate for Issue [0, "TimeEntry", "time_entries"]
+E, [2013-05-06T10:26:09.184163 #8884] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:26:27.056701 #8891] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+W, [2013-05-06T10:26:27.062138 #8891]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:26:27.063857 #8891]  WARN -- : Warning: Failed to find a matching relation for Tracker.projects in Project
+W, [2013-05-06T10:26:27.064067 #8891]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:26:27.065849 #8891]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:26:27.181108 #8891] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:26:40.318315 #8898] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:26:40.321402 #8898] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+W, [2013-05-06T10:26:40.325010 #8898]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:26:40.326579 #8898]  WARN -- : Warning: Failed to find a matching relation for Tracker.projects in Project
+W, [2013-05-06T10:26:40.326770 #8898]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:26:40.330352 #8898]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:26:40.455942 #8898] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:26:54.533019 #8903] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:26:54.536074 #8903] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+W, [2013-05-06T10:26:54.539699 #8903]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:26:54.541208 #8903]  WARN -- : Warning: Failed to find a matching relation for Tracker.projects in Project
+W, [2013-05-06T10:26:54.541413 #8903]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:26:54.543071 #8903]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:26:54.666384 #8903] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:27:05.591494 #8908] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:27:05.594576 #8908] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+W, [2013-05-06T10:27:05.598389 #8908]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:27:05.600045 #8908]  WARN -- : Warning: Failed to find a matching relation for Tracker.projects in Project
+W, [2013-05-06T10:27:05.600248 #8908]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-06T10:27:05.602201 #8908]  WARN -- : Warning: Failed to find a matching relation for IssueCustomField.projects in Project
+E, [2013-05-06T10:27:05.736000 #8908] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:28:02.510753 #8921] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:28:02.514216 #8921] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:28:02.514775 #8921] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:28:02.515315 #8921] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:28:02.515570 #8921] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:29:57.133828 #8943] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:29:57.137174 #8943] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:29:57.137763 #8943] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:29:57.138305 #8943] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:29:57.138484 #8943] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:30:05.899298 #8946] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:30:05.902846 #8946] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:30:05.903494 #8946] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:30:05.904074 #8946] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:30:05.904272 #8946] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:32:38.312073 #8980] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:32:38.315383 #8980] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:32:38.315920 #8980] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:32:38.316453 #8980] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:32:38.316627 #8980] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:34:14.271563 #9000] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:34:14.274909 #9000] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:34:14.275490 #9000] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:34:14.276098 #9000] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:34:14.276280 #9000] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+W, [2013-05-06T10:34:14.280025 #9000]  WARN -- : Warning: Failed to find a matching relation for Project.repositories in Repository
+W, [2013-05-06T10:34:14.280704 #9000]  WARN -- : Warning: Failed to find a matching relation for Project.queries in IssueQuery
+W, [2013-05-06T10:34:14.281758 #9000]  WARN -- : Warning: Failed to find a matching relation for Project.time_entry_activities in TimeEntryActivity
+W, [2013-05-06T10:34:14.288338 #9000]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:34:14.289761 #9000]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+E, [2013-05-06T10:34:14.420935 #9000] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:34:14.430381 #9000] ERROR -- : Error 4 while creating delete predicate for Project [0, "IssueQuery", "queries"]
+E, [2013-05-06T10:34:14.430510 #9000] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:34:14.430546 #9000] ERROR -- : Error 4 while creating delete predicate for Project [1, "Repository", "repositories"]
+E, [2013-05-06T10:34:25.642894 #9004] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:34:25.646012 #9004] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:34:25.646657 #9004] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:34:25.647250 #9004] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:34:25.647464 #9004] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+W, [2013-05-06T10:34:25.651119 #9004]  WARN -- : Warning: Failed to find a matching relation for Project.repositories in Repository
+W, [2013-05-06T10:34:25.651986 #9004]  WARN -- : Warning: Failed to find a matching relation for Project.queries in IssueQuery
+W, [2013-05-06T10:34:25.659194 #9004]  WARN -- : Warning: Failed to find a matching relation for Project.time_entry_activities in TimeEntryActivity
+W, [2013-05-06T10:34:25.659832 #9004]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:34:25.661250 #9004]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+E, [2013-05-06T10:34:25.790365 #9004] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:34:25.799959 #9004] ERROR -- : Error 4 while creating delete predicate for Project [0, "IssueQuery", "queries"]
+E, [2013-05-06T10:34:25.800106 #9004] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:34:25.800144 #9004] ERROR -- : Error 4 while creating delete predicate for Project [1, "Repository", "repositories"]
+E, [2013-05-06T10:38:13.119813 #9106] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:38:13.122940 #9106] ERROR -- : Error 3 while setting up transitive relation for Repository (relation: filechanges)
+E, [2013-05-06T10:38:13.123562 #9106] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:38:13.124160 #9106] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:38:13.124790 #9106] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:38:13.124973 #9106] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:38:13.125479 #9106] ERROR -- : Error 3 while setting up transitive relation for Project (relation: changesets)
+W, [2013-05-06T10:38:13.136163 #9106]  WARN -- : Warning: Failed to find a matching relation for Project.queries in IssueQuery
+W, [2013-05-06T10:38:13.137391 #9106]  WARN -- : Warning: Failed to find a matching relation for Project.time_entry_activities in TimeEntryActivity
+W, [2013-05-06T10:38:13.137914 #9106]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:38:13.139195 #9106]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+E, [2013-05-06T10:38:13.273718 #9106] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:38:13.283323 #9106] ERROR -- : Error 4 while creating delete predicate for Project [0, "IssueQuery", "queries"]
+E, [2013-05-06T10:38:13.283452 #9106] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:39:51.074677 #9161] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-06T10:39:51.077666 #9161] ERROR -- : Error 3 while setting up transitive relation for Repository (relation: filechanges)
+E, [2013-05-06T10:39:51.078420 #9161] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-06T10:39:51.079035 #9161] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-06T10:39:51.079589 #9161] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-06T10:39:51.079789 #9161] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-06T10:39:51.080302 #9161] ERROR -- : Error 3 while setting up transitive relation for Project (relation: changesets)
+W, [2013-05-06T10:39:51.090454 #9161]  WARN -- : Warning: Failed to find a matching relation for Project.queries in IssueQuery
+W, [2013-05-06T10:39:51.091850 #9161]  WARN -- : Warning: Failed to find a matching relation for Project.time_entry_activities in TimeEntryActivity
+W, [2013-05-06T10:39:51.092463 #9161]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-06T10:39:51.093837 #9161]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+E, [2013-05-06T10:39:51.238314 #9161] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T10:39:51.248581 #9161] ERROR -- : Error 4 while creating delete predicate for Project [0, "IssueQuery", "queries"]
+E, [2013-05-06T10:39:51.248712 #9161] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-06T11:03:05.150960 #9622] ERROR -- : Error 2 while setting up transitive relation for Site (relation: members) in local factblock 
+E, [2013-05-06T11:03:05.151209 #9622] ERROR -- : Error 2 while setting up transitive relation for Site (relation: admins) in local factblock 
+W, [2013-05-06T11:03:05.152514 #9622]  WARN -- : Warning: Failed to find a matching relation for Site.all_comments in AllComment
+W, [2013-05-06T11:03:05.152711 #9622]  WARN -- : Warning: Failed to find a matching relation for Admin_5.site in Site
+W, [2013-05-06T11:03:05.152852 #9622]  WARN -- : Warning: Failed to find a matching relation for Site.cached_pages in CachedPage
+W, [2013-05-06T11:03:05.152954 #9622]  WARN -- : Warning: Failed to find a matching relation for Site.comments in Comment
+W, [2013-05-06T11:03:05.152997 #9622]  WARN -- : Warning: Failed to find a matching relation for Site.articles in Article
+W, [2013-05-06T11:03:05.153402 #9622]  WARN -- : Warning: Failed to find a matching relation for Asset_2.article in Article
+W, [2013-05-06T11:03:05.153466 #9622]  WARN -- : Warning: Failed to find a matching relation for Article.all_comments in AllComment
+E, [2013-05-06T11:03:05.158887 #9622] ERROR -- : Error 4 while creating delete predicate for Article [0, "AllComment", "all_comments"]
+E, [2013-05-06T11:03:05.162855 #9622] ERROR -- : Error 4 while creating delete predicate for Site [1, "Article", "articles"]
+E, [2013-05-06T11:03:05.162927 #9622] ERROR -- : Error 4 while creating delete predicate for Site [1, "CachedPage", "cached_pages"]
+E, [2013-05-06T11:07:06.288307 #9762] ERROR -- : Error 2 while setting up transitive relation for Site (relation: members) in local factblock 
+E, [2013-05-06T11:07:06.288541 #9762] ERROR -- : Error 2 while setting up transitive relation for Site (relation: admins) in local factblock 
+W, [2013-05-06T11:07:06.289720 #9762]  WARN -- : Warning: Failed to find a matching relation for Site.all_comments in AllComment
+W, [2013-05-06T11:07:06.289895 #9762]  WARN -- : Warning: Failed to find a matching relation for Admin_5.site in Site
+W, [2013-05-06T11:07:06.290021 #9762]  WARN -- : Warning: Failed to find a matching relation for Site.cached_pages in CachedPage
+W, [2013-05-06T11:07:06.290110 #9762]  WARN -- : Warning: Failed to find a matching relation for Site.comments in Comment
+W, [2013-05-06T11:07:06.290150 #9762]  WARN -- : Warning: Failed to find a matching relation for Site.articles in Article
+W, [2013-05-06T11:07:06.290530 #9762]  WARN -- : Warning: Failed to find a matching relation for Asset_2.article in Article
+W, [2013-05-06T11:07:06.290604 #9762]  WARN -- : Warning: Failed to find a matching relation for Article.all_comments in AllComment
+E, [2013-05-06T11:07:06.296020 #9762] ERROR -- : Error 4 while creating delete predicate for Article [0, "AllComment", "all_comments"]
+E, [2013-05-06T11:07:06.300416 #9762] ERROR -- : Error 4 while creating delete predicate for Site [1, "Article", "articles"]
+E, [2013-05-06T11:07:06.300511 #9762] ERROR -- : Error 4 while creating delete predicate for Site [1, "CachedPage", "cached_pages"]
+E, [2013-05-06T11:08:07.931980 #9798] ERROR -- : Error 2 while setting up transitive relation for Site (relation: members) in local factblock 
+E, [2013-05-06T11:08:07.932200 #9798] ERROR -- : Error 2 while setting up transitive relation for Site (relation: admins) in local factblock 
+W, [2013-05-06T11:08:07.933433 #9798]  WARN -- : Warning: Failed to find a matching relation for Site.all_comments in AllComment
+W, [2013-05-06T11:08:07.933630 #9798]  WARN -- : Warning: Failed to find a matching relation for Admin_5.site in Site
+W, [2013-05-06T11:08:07.933775 #9798]  WARN -- : Warning: Failed to find a matching relation for Site.cached_pages in CachedPage
+W, [2013-05-06T11:08:07.933859 #9798]  WARN -- : Warning: Failed to find a matching relation for Site.comments in Comment
+W, [2013-05-06T11:08:07.933918 #9798]  WARN -- : Warning: Failed to find a matching relation for Site.articles in Article
+W, [2013-05-06T11:08:07.934284 #9798]  WARN -- : Warning: Failed to find a matching relation for Asset_2.article in Article
+W, [2013-05-06T11:08:07.934363 #9798]  WARN -- : Warning: Failed to find a matching relation for Article.all_comments in AllComment
+E, [2013-05-06T11:08:07.939720 #9798] ERROR -- : Error 4 while creating delete predicate for Article [0, "AllComment", "all_comments"]
+E, [2013-05-06T11:08:07.944086 #9798] ERROR -- : Error 4 while creating delete predicate for Site [1, "Article", "articles"]
+E, [2013-05-06T11:08:07.944177 #9798] ERROR -- : Error 4 while creating delete predicate for Site [1, "CachedPage", "cached_pages"]
+E, [2013-05-06T11:08:32.217046 #9813] ERROR -- : Error 2 while setting up transitive relation for Site (relation: members) in local factblock 
+E, [2013-05-06T11:08:32.217283 #9813] ERROR -- : Error 2 while setting up transitive relation for Site (relation: admins) in local factblock 
+W, [2013-05-06T11:08:32.218570 #9813]  WARN -- : Warning: Failed to find a matching relation for Site.all_comments in AllComment
+W, [2013-05-06T11:08:32.218795 #9813]  WARN -- : Warning: Failed to find a matching relation for Admin_5.site in Site
+W, [2013-05-06T11:08:32.218979 #9813]  WARN -- : Warning: Failed to find a matching relation for Site.cached_pages in CachedPage
+W, [2013-05-06T11:08:32.219073 #9813]  WARN -- : Warning: Failed to find a matching relation for Site.comments in Comment
+W, [2013-05-06T11:08:32.219118 #9813]  WARN -- : Warning: Failed to find a matching relation for Site.articles in Article
+W, [2013-05-06T11:08:32.219546 #9813]  WARN -- : Warning: Failed to find a matching relation for Asset_2.article in Article
+W, [2013-05-06T11:08:32.219610 #9813]  WARN -- : Warning: Failed to find a matching relation for Article.all_comments in AllComment
+E, [2013-05-06T11:08:32.223423 #9813] ERROR -- : Error 4 while creating delete predicate for Article [0, "AllComment", "all_comments"]
+E, [2013-05-06T11:08:32.227241 #9813] ERROR -- : Error 4 while creating delete predicate for Site [1, "Article", "articles"]
+E, [2013-05-06T11:08:32.227331 #9813] ERROR -- : Error 4 while creating delete predicate for Site [1, "CachedPage", "cached_pages"]
+E, [2013-05-08T23:05:39.153275 #1243] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-08T23:05:39.156421 #1243] ERROR -- : Error 3 while setting up transitive relation for Repository (relation: filechanges)
+E, [2013-05-08T23:05:39.157014 #1243] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-08T23:05:39.157566 #1243] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-08T23:05:39.158212 #1243] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-08T23:05:39.158392 #1243] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-08T23:05:39.158896 #1243] ERROR -- : Error 3 while setting up transitive relation for Project (relation: changesets)
+W, [2013-05-08T23:05:39.169291 #1243]  WARN -- : Warning: Failed to find a matching relation for Project.queries in IssueQuery
+W, [2013-05-08T23:05:39.170326 #1243]  WARN -- : Warning: Failed to find a matching relation for Project.time_entry_activities in TimeEntryActivity
+W, [2013-05-08T23:05:39.170957 #1243]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-08T23:05:39.172345 #1243]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+E, [2013-05-08T23:05:39.313335 #1243] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-08T23:05:39.323341 #1243] ERROR -- : Error 4 while creating delete predicate for Project [0, "IssueQuery", "queries"]
+E, [2013-05-08T23:05:39.323467 #1243] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-08T23:07:11.969402 #1367] ERROR -- : Error 1 while setting up transitive relation for IssueCustomField (relation: issues) in local factblock 
+E, [2013-05-08T23:07:11.972587 #1367] ERROR -- : Error 3 while setting up transitive relation for Repository (relation: filechanges)
+E, [2013-05-08T23:07:11.973225 #1367] ERROR -- : Error 3 while setting up transitive relation for Principal (relation: projects)
+E, [2013-05-08T23:07:11.973774 #1367] ERROR -- : Error 3 while setting up transitive relation for Project (relation: users)
+E, [2013-05-08T23:07:11.974357 #1367] ERROR -- : Error 3 while setting up transitive relation for Project (relation: principals)
+E, [2013-05-08T23:07:11.974523 #1367] ERROR -- : Error 2 while setting up transitive relation for Project (relation: issue_changes) in local factblock 
+E, [2013-05-08T23:07:11.975036 #1367] ERROR -- : Error 3 while setting up transitive relation for Project (relation: changesets)
+W, [2013-05-08T23:07:11.979912 #1367]  WARN -- : Warning: Failed to find a matching relation for Project.queries in IssueQuery
+W, [2013-05-08T23:07:11.980874 #1367]  WARN -- : Warning: Failed to find a matching relation for Project.time_entry_activities in TimeEntryActivity
+W, [2013-05-08T23:07:11.981564 #1367]  WARN -- : Warning: Failed to find a matching relation for Board.messages in Message
+W, [2013-05-08T23:07:11.983029 #1367]  WARN -- : Warning: Failed to find a matching relation for IssueStatus.workflows in WorkflowTransition
+W, [2013-05-08T23:07:11.984250 #1367]  WARN -- : Warning: Failed to find a matching relation for s(:colon2, s(:const, :Repository), :Mercurial).changesets in Changeset
+E, [2013-05-08T23:07:12.169573 #1367] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
+E, [2013-05-08T23:07:12.181643 #1367] ERROR -- : Error 4 while creating delete predicate for Project [0, "IssueQuery", "queries"]
+E, [2013-05-08T23:07:12.181805 #1367] ERROR -- : Error 4 while creating delete predicate for Board [1, "Message", "messages"]
