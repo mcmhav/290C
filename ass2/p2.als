@@ -49,7 +49,7 @@ pred remove [d, d': DDL]{
 }
 
 run remove for 2 exactly DDL, 4 Node
-**/
+**
 
 // File system objects
 abstract sig FSObject { }
@@ -75,3 +75,24 @@ pred remove [fs, fs': FileSystem, x: FSObject] {
 }
 
 run remove for exactly 2 FileSystem, 4 FSObject
+**/
+
+sig node{}
+sig list
+{
+    elts: set node,
+    next: elts lone->lone elts,
+    prev: elts lone->lone elts,
+    first: one node,
+    last: one node
+} 
+{
+    all x:elts | x not in x.^next
+    all x:elts | x not in x.^prev
+    no first.prev
+    no last.next
+
+    first.^next=elts-first
+    last.^prev=elts-last
+    all x,x1:elts | (x.next=x1) =>(x1.prev=x)
+} 
