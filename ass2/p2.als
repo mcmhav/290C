@@ -77,12 +77,15 @@ pred remove [fs, fs': FileSystem, x: FSObject] {
 run remove for exactly 2 FileSystem, 4 FSObject
 **/
 
-sig node{}
+sig node{
+	next: lone node -> lone node,
+	prev: lone node -> lone node
+}
 sig DLL
 {
     live: set node,
-    next: live lone->lone live,
-    prev: live lone->lone live,
+    //next: live lone->lone live,
+    //prev: live lone->lone live,
     head: one node,
     tail: one node
 } 
