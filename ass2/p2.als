@@ -78,21 +78,29 @@ run remove for exactly 2 FileSystem, 4 FSObject
 **/
 
 sig node{}
-sig list
+sig DLL
 {
-    elts: set node,
-    next: elts lone->lone elts,
-    prev: elts lone->lone elts,
-    first: one node,
-    last: one node
+    live: set node,
+    next: live lone->lone live,
+    prev: live lone->lone live,
+    head: one node,
+    tail: one node
 } 
 {
-    all x:elts | x not in x.^next
-    all x:elts | x not in x.^prev
-    no first.prev
-    no last.next
+    all x:live | x not in x.^next
+    all x:live | x not in x.^prev
+    no head.prev
+    no tail.next
 
-    first.^next=elts-first
-    last.^prev=elts-last
-    all x,x1:elts | (x.next=x1) =>(x1.prev=x)
-} 
+    head.^next=live-head
+    tail.^prev=live-tail
+    all x,x1:live | (x.next=x1) =>(x1.prev=x)
+}
+
+pred remove [d,d': DLL, n: node] {
+	n = d.tail
+	d'.tail = d.tail.prev
+	d'.prev = d.prev - n->(n.(d.prev))
+}
+
+run {} for exactly 2 list, 4 node         
