@@ -5,20 +5,20 @@ Hint: Specify prev and next as relations (using the cross product ->).
 Specify and check or simulate the following properties for scopes 2 and 3 using the Alloy Analyzer: 
 
     1) It is possible to obtain an empty DLL after a delete. 
-    2) After an add the DLL contains at least one node. 
+D   2) After an add the DLL contains at least one node. 
     3) Adding a node to a DLL increases the size of its contents by one. 
     4) Deleting a node from a DLL decreases the size of its contents by one. 
     5) After an add, the next of the new head is the old head. 
     6) After a delete, the new tail is the prev of the old tail.
 
-**/
+
 
 sig Node {
     next : lone Node,
 	prev: lone Node
 } 
 
-sig DDL {
+some sig DDL {
 	live: set Node,
 	Head: lone Node,
 	Tail: lone Node,
@@ -38,10 +38,8 @@ sig DDL {
 	//live in Head.*next + Head
 }
 
-pred add [n, n': Node, d: DDL]{
-	n'.next = n
-	n.prev = n'
-	n' = d.Head
+pred add [n: Node, d: DDL]{
+	n = d.Head
 }
 
 pred remove [d, d': DDL]{
@@ -50,4 +48,30 @@ pred remove [d, d': DDL]{
 	d'.nodes = d.nodes - d.Tail -> ((d.Tail).(d.nodes))
 }
 
-run remove for 2 DDL, 4 Node
+run remove for 2 exactly DDL, 4 Node
+**/
+
+// File system objects
+abstract sig FSObject { }
+sig File, Dir extends FSObject { }
+
+// A File System
+sig FileSystem {
+  live: set FSObject,
+  root: Dir & live,
+  parent: (live - root) ->one (Dir & live),
+  contents: Dir -> FSObject
+}{
+  // live objects are reachable from the root
+  live in root.*contents
+  // parent is the inverse of contents
+  parent = ~contents
+}
+
+// Delete the file or directory x
+pred remove [fs, fs': FileSystem, x: FSObject] {
+  x in (fs.live - fs.root)
+  fs'.parent = fs.parent - x->(x.(fs.parent))
+}
+
+run remove for exactly 2 FileSystem, 4 FSObject
