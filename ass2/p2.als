@@ -4,11 +4,11 @@
 Hint: Specify prev and next as relations (using the cross product ->). 
 Specify and check or simulate the following properties for scopes 2 and 3 using the Alloy Analyzer: 
 
-    1) It is possible to obtain an empty DLL after a delete. 
+D    1) It is possible to obtain an empty DLL after a delete. 
 D   2) After an add the DLL contains at least one node. 
-    3) Adding a node to a DLL increases the size of its contents by one. 
-    4) Deleting a node from a DLL decreases the size of its contents by one. 
-    5) After an add, the next of the new head is the old head. 
+D    3) Adding a node to a DLL increases the size of its contents by one. 
+D    4) Deleting a node from a DLL decreases the size of its contents by one. 
+D    5) After an add, the next of the new head is the old head. 
     6) After a delete, the new tail is the prev of the old tail.
 
 
@@ -49,45 +49,20 @@ pred remove [d, d': DDL]{
 }
 
 run remove for 2 exactly DDL, 4 Node
-**
 
-// File system objects
-abstract sig FSObject { }
-sig File, Dir extends FSObject { }
-
-// A File System
-sig FileSystem {
-  live: set FSObject,
-  root: Dir & live,
-  parent: (live - root) ->one (Dir & live),
-  contents: Dir -> FSObject
-}{
-  // live objects are reachable from the root
-  live in root.*contents
-  // parent is the inverse of contents
-  parent = ~contents
-}
-
-// Delete the file or directory x
-pred remove [fs, fs': FileSystem, x: FSObject] {
-  x in (fs.live - fs.root)
-  fs'.parent = fs.parent - x->(x.(fs.parent))
-}
-
-run remove for exactly 2 FileSystem, 4 FSObject
 **/
 
 sig node{
-	next: lone node -> lone node,
-	prev: lone node -> lone node
+	//next: lone node -> lone node,
+	//prev: lone node -> lone node
 }
-sig DLL
+some sig DLL
 {
     live: set node,
-    //next: live lone->lone live,
-    //prev: live lone->lone live,
-    head: one node,
-    tail: one node
+    next: live lone->lone live,
+    prev: live lone->lone live,
+    head: lone node,
+    tail: lone node
 } 
 {
     all x:live | x not in x.^next
@@ -95,15 +70,22 @@ sig DLL
     no head.prev
     no tail.next
 
+	all h:head | h in live
+	all t:tail | t in live
+
     head.^next=live-head
     tail.^prev=live-tail
     all x,x1:live | (x.next=x1) =>(x1.prev=x)
 }
 
-pred remove [d,d': DLL, n: node] {
-	n = d.tail
-	d'.tail = d.tail.prev
-	d'.prev = d.prev - n->(n.(d.prev))
+pred add [n: node, d: DLL]{
+	n = d.head
 }
 
-run {} for exactly 2 list, 4 node         
+pred remove [d,d': DLL, n: node] {
+	//n = d.tail
+	//d'.tail = d.prev
+	d'.live = d.live - n
+}
+
+run remove for exactly 1 DLL, 4 node         
