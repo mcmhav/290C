@@ -5,7 +5,7 @@ Hint: Specify prev and next as relations (using the cross product ->).
 Specify and check or simulate the following properties for scopes 2 and 3 using the Alloy Analyzer: 
 
 D    1) It is possible to obtain an empty DLL after a delete. 
-D   2) After an add the DLL contains at least one node. 
+D    2) After an add the DLL contains at least one node. 
 D    3) Adding a node to a DLL increases the size of its contents by one. 
 D    4) Deleting a node from a DLL decreases the size of its contents by one. 
 D    5) After an add, the next of the new head is the old head. 
