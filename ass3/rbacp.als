@@ -42,11 +42,11 @@ pred accessResourceP2 [u: user, r: resource] {
 assert doctorAccessBill {
 	no d:doctor, mb:medicalBill | (mb in d.access)
 } //check doctorAccessBill
-assert patientOnlyAccessOwnBill {
-	no p:patient, bl:medicalBill | 	
-		(p.assMedicalBill not in p.access) ||
-		((p.assMedicalBill = bl) and (bl not in p.access))
-} check patientOnlyAccessOwnBill
+assert patientOnlyAccessOwnHealthRecord {
+	no p:patient, hr:healthRecord | 	
+		(p.assHealthRecord not in p.access) ||
+		((p.assHealthRecord = hr) and (hr not in p.access))
+} check patientOnlyAccessOwnHealthRecord
 assert adminOnlyAccessOwnResources {
 	no a:administrator, hr:healthRecord |
 		(hr in a.access) and (a not in hr.administrators)
