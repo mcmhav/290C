@@ -67,8 +67,6 @@ one sig PreState {
 	assigned_sections_section: AssignedSection set -> one Section,
 	article_assigned_sections: Article one -> set AssignedSection,
 	assigned_assets_article: AssignedAsset set -> one Article,
-	asset_assigned_assets: Asset one -> set AssignedAsset,
-	article_assigned_assets: Article one -> set AssignedAsset,
 	unapproved_comments_article: UnapprovedComment_1 set -> set Article,
 	comments_article: Comment_0 set -> set Article,
 	events_article: Event set -> one Article,
@@ -78,7 +76,7 @@ one sig PreState {
 	user_events: User one -> set Event,
 
 	Article_sections = article_assigned_sections.assigned_sections_section,
-	Article_assets = article_assigned_assets.~(asset_assigned_assets),
+	Article_assets = ~(assigned_assets_article).(assigned_assets_asset),
 	Section_articles = ~(assigned_sections_section).~(article_assigned_sections),
 	User_sites = ~(memberships_user).memberships_site,
 }{
@@ -150,8 +148,6 @@ one sig PostState {
 	site_assets': Site set -> set Asset,
 	assigned_sections_section': AssignedSection set -> set Section,
 	article_assigned_sections': Article set -> set AssignedSection,
-	article_assigned_assets': Article set -> set AssignedAsset,
-	asset_assigned_assets': Asset set -> set AssignedAsset,
 	assigned_assets_article': AssignedAsset set -> set Article,
 	unapproved_comments_article': UnapprovedComment_1 set -> set Article,
 	comments_article': Comment_0 set -> set Article,
@@ -162,7 +158,7 @@ one sig PostState {
 	user_events': User set -> set Event,
 
 	Article_sections' = article_assigned_sections'.assigned_sections_section',
-	Article_assets' = article_assigned_assets'.~(asset_assigned_assets'),
+	Article_assets' = ~(assigned_assets_article').(assigned_assets_asset'),
 	Section_articles' = ~(assigned_sections_section').~(article_assigned_sections'),
 	User_sites' = ~(memberships_user').memberships_site',
 }
