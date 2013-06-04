@@ -10,5 +10,6 @@
 
 /ass2/model
 temp.*
+test.*
 *.log
 *.tar.gz
