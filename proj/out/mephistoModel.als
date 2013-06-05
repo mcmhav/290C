@@ -24,6 +24,13 @@ sig CachedPage extends ActiveRecord { }
 sig Site_8 in Site { } 
 sig Taggable in ActiveRecord { }
 
+
+run deleteUser for 5 ActiveRecord, 2 User, 2 Comment
+
+assert doctorAccessBill {
+	//no d:doctor, mb:medicalBill | (mb in d.access)
+} //check doctorAccessBill
+
 one sig PreState { 
 	memberships: set Membership, 
 	events: set Event, 
