@@ -14,6 +14,7 @@ clean:
 
 push:
 	rm -f $(RMFILES)
+	clear
 	git commit -am $(MESSAGE) && git pull && git push
 
 mrun:

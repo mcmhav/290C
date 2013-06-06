@@ -226,7 +226,6 @@ one sig PreState {
 	member_roles_role: MemberRole set -> one Role,
 	workflow_rules_role: WorkflowRule set -> one Role,
 	member_roles_member: MemberRole set -> one Member,
-	member_member_roles: Member one -> set MemberRole,
 	user_members: User one -> set Member,
 	children_parents: Changeset set -> set Changeset,
 	user_journals: User one -> set Journal,
@@ -236,8 +235,8 @@ one sig PreState {
 	user_tokens: User one -> set Token,
 	user_watchers: User one -> set Watcher,
 
-	Member_roles = member_member_roles.member_roles_role,
-	Role_members = ~(member_roles_role).~(member_member_roles),
+	Member_roles = ~(member_roles_member).member_roles_role,
+	Role_members = ~(member_roles_role).member_roles_member,
 }{
 	all x: CustomValue | x in customvalues
 	all x: TimeEntryActivity | x in timeentryactivities
@@ -467,7 +466,6 @@ one sig PostState {
 	member_roles_role': MemberRole set -> set Role,
 	workflow_rules_role': WorkflowRule set -> set Role,
 	member_roles_member': MemberRole set -> set Member,
-	member_member_roles': Member set -> set MemberRole,
 	user_members': User set -> set Member,
 	children_parents': Changeset set -> set Changeset,
 	user_journals': User set -> set Journal,
@@ -477,8 +475,8 @@ one sig PostState {
 	user_tokens': User set -> set Token,
 	user_watchers': User set -> set Watcher,
 
-	Member_roles' = member_member_roles'.member_roles_role',
-	Role_members' = ~(member_roles_role').~(member_member_roles'),
+	Member_roles' = ~(member_roles_member').member_roles_role',
+	Role_members' = ~(member_roles_role').(member_roles_member'),
 }
 
 fact {   

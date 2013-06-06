@@ -24,12 +24,65 @@ sig CachedPage extends ActiveRecord { }
 sig Site_8 in Site { } 
 sig Taggable in ActiveRecord { }
 
+/*
 
-run deleteUser for 5 ActiveRecord, 2 User, 2 Comment
+1 - Every comment has an event instance
+2 - Every comment belongs to a user
+3 - No dangling comment after user delete
+4 - No dangling sections after site delete
+5 - Article can have multiple users
 
-assert doctorAccessBill {
-	//no d:doctor, mb:medicalBill | (mb in d.access)
-} //check doctorAccessBill
+*/
+
+//run deleteUser for 5 ActiveRecord, exactly 1 User, exactly 1 Membership
+pred articleGotMultiUser [p: PreState, c:Comment, e:Event] { 
+//	all p:PreState, a:Article, u:User, u2:User | (
+			(u in p.users) && (u2 in p.users) && (a in p.articles) && (u != u2) &&
+			((a -> u) in p.articles_user) && 
+			((a -> u2) in p.articles_user) 
+	//	)
+}// run articleGotMultiUser for 5 ActiveRecord
+
+assert commentHasEvent {
+//	all p:PreState, c:Comment, e:Event | 
+//		((c in p.comments) && (e in p.events) && (e ->c )) => 
+//		((e ->c ) in p.event_comment)
+} //check commentHasEvent for 20 ActiveRecord
+
+assert eventInArticleBelongsToUser {
+	all p:PreState, a:Article, u:User, e:Event | 
+		((a in p.articles) && (u in p.users) && (e in p.events) &&
+		((u -> e) = p.user_events) && ((u -> a) = (p.updater_articles))) => 
+		((e -> a) in p.events_article)
+} //check eventInArticleBelongsToUser for 5 ActiveRecord
+
+assert removeMembershipForDelUser {
+	all pr:PreState, p:PostState,  m:Membership, u:User | 
+		((u in pr.users) && (m in pr.memberships) && ((m -> u) in pr.memberships_user) && 
+		(u not in p.users') && (u not in pr.admin_5s)) 
+		=> 
+		((m -> u) not in p.memberships_user')
+} // check removeMembershipForDelUser for 5 ActiveRecord
+
+assert removeSectionsAfterSiteDel {
+	all pr:PreState, p:PostState,  si:Site, s:Section | (
+			(si in pr.sites) && (si not in p.sites') && 
+			(s in pr.sections) && ((s -> si) in pr.sections_site) && 
+			(si not in pr.site_8s)
+		) => (
+//			((s -> si) not in p.sections_site') &&
+			(s not in p.sections')
+		)
+} //check removeSectionsAfterSiteDel for 5 ActiveRecord
+
+pred articleGotMultiUser [p: PreState, a:Article_3, u:User, u2:User] { 
+//	all p:PreState, a:Article, u:User, u2:User | (
+			(u in p.users) && (u2 in p.users) && (a in p.articles) && (u != u2) &&
+			((a -> u) in p.articles_user) && 
+			((a -> u2) in p.articles_user) 
+	//	)
+} //run articleGotMultiUser for 5 ActiveRecord
+
 
 one sig PreState { 
 	memberships: set Membership, 
