@@ -1,7 +1,6 @@
 *.class
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
@@ -13,3 +12,4 @@ temp.*
 test.*
 *.log
 *.tar.gz
+*~
