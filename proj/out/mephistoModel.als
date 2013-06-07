@@ -34,25 +34,28 @@ sig Taggable in ActiveRecord { }
 
 */
 
-//run deleteUser for 5 ActiveRecord, exactly 1 User, exactly 1 Membership
-pred articleGotMultiUser [p: PreState, c:Comment, e:Event] { 
+//run commentHasEvent for 5 ActiveRecord, exactly 1 User, exactly 1 Membership
+pred siteCanHaveEvents [p: PreState, s:Site, e:Event, e2:Event] { 
 //	all p:PreState, a:Article, u:User, u2:User | (
-			(u in p.users) && (u2 in p.users) && (a in p.articles) && (u != u2) &&
-			((a -> u) in p.articles_user) && 
-			((a -> u2) in p.articles_user) 
+			(e in p.events) && (e2 in p.events) && (s in p.sites) && (e != e2) &&
+			((e -> s) in p.events_site) && 
+			((e2 -> s) in p.events_site) 
 	//	)
-}// run articleGotMultiUser for 5 ActiveRecord
+} run siteCanHaveEvents for 25 ActiveRecord
 
-assert commentHasEvent {
-//	all p:PreState, c:Comment, e:Event | 
-//		((c in p.comments) && (e in p.events) && (e ->c )) => 
-//		((e ->c ) in p.event_comment)
-} //check commentHasEvent for 20 ActiveRecord
+//assert commentHasEvent {
+//	all p:PreState, c:Comment, e:Event | (
+//		(c in p.comments) && (e in p.events) && ((e -> c) = 1)
+//		) => (
+//		(e ->c ) in p.event_comment
+//		)
+//} check commentHasEvent for 10 ActiveRecord
 
 assert eventInArticleBelongsToUser {
 	all p:PreState, a:Article, u:User, e:Event | 
 		((a in p.articles) && (u in p.users) && (e in p.events) &&
-		((u -> e) = p.user_events) && ((u -> a) = (p.updater_articles))) => 
+		((u -> e) = p.user_events) && ((u -> a) = (p.updater_articles))) 
+		=> 
 		((e -> a) in p.events_article)
 } //check eventInArticleBelongsToUser for 5 ActiveRecord
 
@@ -69,7 +72,7 @@ assert removeSectionsAfterSiteDel {
 			(si in pr.sites) && (si not in p.sites') && 
 			(s in pr.sections) && ((s -> si) in pr.sections_site) && 
 			(si not in pr.site_8s)
-		) => (
+			) => (
 //			((s -> si) not in p.sections_site') &&
 			(s not in p.sections')
 		)
