@@ -96,52 +96,48 @@ sig Container in ActiveRecord { }
 
 //run commentHasEvent for 5 ActiveRecord, exactly 1 User, exactly 1 Membership
 
-assert noDanglingDocAfterProjDel { 
+assert noDanglingDocAfterProjDel { // 6
 	all pr:PreState, po:PostState,  d:Document, p:Project | (
-		(d in pr.documents) && ( p in pr.projects) && ((d -> p) in pr.documents_project) && 
-		(p not in po.projects')
+			(d in pr.documents) && ( p in pr.projects) && ((d -> p) in pr.documents_project) && 
+			(p not in po.projects')
 		) => (
-		(d not in pn.documents')
+			(d not in po.documents')
 		)
-}  check noDanglingDocAfterProjDel for 10 ActiveRecord
+}  // check noDanglingDocAfterProjDel for 10 ActiveRecord
 
-/*
-assert eventInArticleBelongsToUser {
-	all p:PreState, a:Article, u:User, e:Event | 
-		((a in p.articles) && (u in p.users) && (e in p.events) &&
-		((u -> e) = p.user_events) && ((u -> a) = (p.updater_articles))) 
-		=> 
-		((e -> a) in p.events_article)
-} // check eventInArticleBelongsToUser for 40 ActiveRecord
-
-assert removeMembershipForDelUser {
-	all pr:PreState, p:PostState,  m:Membership, u:User | 
-		((u in pr.users) && (m in pr.memberships) && ((m -> u) in pr.memberships_user) && 
-		(u not in p.users') && (u not in pr.admin_5s)) 
-		=> 
-		((m -> u) not in p.memberships_user')
-} // check removeMembershipForDelUser for 40 ActiveRecord
-
-assert removeSectionsAfterSiteDel {
-	all pr:PreState, p:PostState,  si:Site, s:Section | (
-			(si in pr.sites) && (si not in p.sites') && 
-			(s in pr.sections) && ((s -> si) in pr.sections_site) && 
-			(si not in pr.site_8s)
-			) => (
-//			((s -> si) not in p.sections_site') &&
-			(s not in p.sections')
+assert attachmentBelongToAnAuthor { // 7
+	all pr:PreState, a:Attachment | (
+		some u:User | (
+			(a in pr.attachments) && ( u in pr.users) && ((u -> a) in pr.author_attachments) 
 		)
-} //check removeSectionsAfterSiteDel for 40 ActiveRecord
+	)
+} // check attachmentBelongToAnAuthor for 5 ActiveRecord
 
+assert commentExistAfterUserDel { // 8
+	
+} // check commentExistAfterUserDel for 5 ActiveRecord
 
-pred articleGotMultiUser [p: PreState, a:Article_3, u:User, u2:User] { 
-//	all p:PreState, a:Article, u:User, u2:User | (
-			(u in p.users) && (u2 in p.users) && (a in p.articles) && (u != u2) &&
-			((a -> u) in p.articles_user) && 
-			((a -> u2) in p.articles_user) 
-	//	)
-} //run articleGotMultiUser for 5 ActiveRecord
-*/
+assert t9 { // 9
+} //check t9 for 5 ActiveRecord
+
+pred t10 { // 10 [p: PreState, a:Article_3, u:User, u2:User] 
+} //run t10 for 5 ActiveRecord
+
+pred t11 { // 11
+} //run t11 for 5 ActiveRecord
+
+pred t12 { // 12
+} //run t12 for 5 ActiveRecord
+
+pred t13 { // 13
+} //run t13 for 5 ActiveRecord
+
+pred t14 { // 14
+} //run t14 for 5 ActiveRecord
+
+pred t15 { // 15
+} //run t15 for 5 ActiveRecord
+
 
 
 one sig PreState { 
