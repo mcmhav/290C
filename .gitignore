@@ -4,9 +4,6 @@
 *.war
 *.ear
 
-/proj/apps
-/proj/ss
-
 /ass2/model
 temp.*
 test.*
