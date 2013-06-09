@@ -137,18 +137,28 @@ pred projCanHaveNoMembers [p: PreState, pr:Project]  { // 13
 	(pr in p.projects) &&
 	no p.memberships_project
 } //run projCanHaveNoMembers for 40 ActiveRecord, 1 Project
-
-
-
-
 assert memberOfProjGotProjAsProj { // 14
-	
-} check memberOfProjGotProjAsProj for 10 ActiveRecord
+		all pr:PreState, m:Member, p:Project | (
+			( p in pr.projects) && 			
+((m -> p) in pr.memberships_project) 
+		) => (
+		//	((p -> m) in ~(pr.memberships_project))
+	(m in pr.members)
+	)
+} //check memberOfProjGotProjAsProj for 10 ActiveRecord
 
 
+assert repositoryGoneWhenProjGone { // 15
+	all pr:PreState, po:PostState, p:Project, r:Repository | (
+			(r in pr.repositories) && (p in pr.projects) && 
+((r -> p) in pr.	repositories_project) && 
+			(p not in po.projects')
+		) => (
+			(r not in po.repositories') &&
+		((r -> p) not in po.repositories_project') 
+	)
+} check repositoryGoneWhenProjGone for 40 ActiveRecord
 
-pred t15 { // 15
-} //run t15 for 10 ActiveRecord
 
 one sig PreState { 
 	customvalues: set CustomValue, 

@@ -69,7 +69,7 @@ assert removeSectionsAfterSiteDel {
 //			((s -> si) not in p.sections_site') &&
 			(s not in p.sections')
 		)
-} //check removeSectionsAfterSiteDel for 40 ActiveRecord
+} //check removeSectionsAfterSiteDel for 5 ActiveRecord
 
 pred articleGotMultiUser [p: PreState, a:Article_3, u:User, u2:User] { 
 //	all p:PreState, a:Article, u:User, u2:User | (
