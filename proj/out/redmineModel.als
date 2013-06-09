@@ -102,9 +102,8 @@ assert noDanglingDocAfterProjDel { // 6
 			(p not in po.projects')
 		) => (
 			(d not in po.documents')
-		)
+	)
 }  // check noDanglingDocAfterProjDel for 10 ActiveRecord
-
 assert attachmentBelongToAnAuthor { // 7
 	all pr:PreState, a:Attachment | (
 		some u:User | (
@@ -112,33 +111,27 @@ assert attachmentBelongToAnAuthor { // 7
 		)
 	)
 } // check attachmentBelongToAnAuthor for 5 ActiveRecord
+pred commentExistAfterUserDel [pr: PreState, po:PostState, c:Comment, u:User] {
+	(c in pr.comments) && (u in pr.users) && ((u -> c) in pr.author_comments) && 
+	(u not in po.users') && (c  in po.comments') 
+} //run commentExistAfterUserDel for 10 ActiveRecord
+pred distrThroughRepForProj [pr: PreState, po:PostState, p:Project, r:Repository] { // 9
+	(r -> p) in pr.repositories_project
+} run distrThroughRepForProj for 40 ActiveRecord
 
-assert commentExistAfterUserDel { // 8
+pred t10 { // 10
 	
-} // check commentExistAfterUserDel for 5 ActiveRecord
-
-assert t9 { // 9
-} //check t9 for 5 ActiveRecord
-
-pred t10 { // 10 [p: PreState, a:Article_3, u:User, u2:User] 
 } //run t10 for 5 ActiveRecord
-
 pred t11 { // 11
 } //run t11 for 5 ActiveRecord
-
 pred t12 { // 12
 } //run t12 for 5 ActiveRecord
-
 pred t13 { // 13
 } //run t13 for 5 ActiveRecord
-
 pred t14 { // 14
 } //run t14 for 5 ActiveRecord
-
 pred t15 { // 15
 } //run t15 for 5 ActiveRecord
-
-
 
 one sig PreState { 
 	customvalues: set CustomValue, 
