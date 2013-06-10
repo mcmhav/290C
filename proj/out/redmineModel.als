@@ -81,18 +81,6 @@ sig Customized in ActiveRecord { }
 sig Watchable in ActiveRecord { }
 sig Container in ActiveRecord { }
 
-/*
- - No dangling documents after project delete
- - Every attachment belongs to a author
- - Can have dangling comment after author delete
- - Project distribute change through repository
- - Role can have many members
- - Members can have many roles
- - A member has a project
- - A project can have no members
- - Member of project has project as projects
- - A project can just have on repository
-*/
 
 //run commentHasEvent for 5 ActiveRecord, exactly 1 User, exactly 1 Membership
 
