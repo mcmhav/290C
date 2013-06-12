@@ -37,12 +37,10 @@ sig Taggable in ActiveRecord { }
 //run commentHasEvent for 5 ActiveRecord, exactly 1 User, exactly 1 Membership
 
 pred siteCanHaveEvents [p: PreState, s:Site, e:Event, e2:Event] { 
-//	all p:PreState, a:Article, u:User, u2:User | (
 			(e in p.events) && (e2 in p.events) && (s in p.sites) && (e != e2) &&
 			((e -> s) in p.events_site) && 
 			((e2 -> s) in p.events_site) 
-	//	)
-} // run siteCanHaveEvents for 40 ActiveRecord
+} run siteCanHaveEvents for 10 ActiveRecord
 
 assert eventInArticleBelongsToUser {
 	all p:PreState, a:Article, u:User, e:Event | 
@@ -50,7 +48,7 @@ assert eventInArticleBelongsToUser {
 		((u -> e) = p.user_events) && ((u -> a) = (p.updater_articles))) 
 		=> 
 		((e -> a) in p.events_article)
-} // check eventInArticleBelongsToUser for 40 ActiveRecord
+} check eventInArticleBelongsToUser for 10 ActiveRecord
 
 assert removeMembershipForDelUser {
 	all pr:PreState, p:PostState,  m:Membership, u:User | 
@@ -58,7 +56,7 @@ assert removeMembershipForDelUser {
 		(u not in p.users') && (u not in pr.admin_5s)) 
 		=> 
 		((m -> u) not in p.memberships_user')
-} // check removeMembershipForDelUser for 40 ActiveRecord
+} check removeMembershipForDelUser for 10 ActiveRecord
 
 assert removeSectionsAfterSiteDel {
 	all pr:PreState, p:PostState,  si:Site, s:Section | (
@@ -69,15 +67,13 @@ assert removeSectionsAfterSiteDel {
 //			((s -> si) not in p.sections_site') &&
 			(s not in p.sections')
 		)
-} //check removeSectionsAfterSiteDel for 5 ActiveRecord
+} check removeSectionsAfterSiteDel for 10 ActiveRecord
 
 pred articleGotMultiUser [p: PreState, a:Article_3, u:User, u2:User] { 
-//	all p:PreState, a:Article, u:User, u2:User | (
 			(u in p.users) && (u2 in p.users) && (a in p.articles) && (u != u2) &&
 			((a -> u) in p.articles_user) && 
 			((a -> u2) in p.articles_user) 
-	//	)
-} //run articleGotMultiUser for 5 ActiveRecord
+} run articleGotMultiUser for 10 ActiveRecord
 
 
 one sig PreState { 

@@ -82,8 +82,6 @@ sig Watchable in ActiveRecord { }
 sig Container in ActiveRecord { }
 
 
-//run commentHasEvent for 5 ActiveRecord, exactly 1 User, exactly 1 Membership
-
 assert noDanglingDocAfterProjDel { // 6
 	all pr:PreState, po:PostState,  d:Document, p:Project | (
 			(d in pr.documents) && ( p in pr.projects) && ((d -> p) in pr.documents_project) && 
@@ -92,39 +90,47 @@ assert noDanglingDocAfterProjDel { // 6
 			(d not in po.documents')
 	)
 }  //check noDanglingDocAfterProjDel for 10 ActiveRecord
+
 assert attachmentBelongToAnAuthor { // 7
 	all pr:PreState, a:Attachment | (
 		some u:User | (
 			(a in pr.attachments) && ( u in pr.users) && ((u -> a) in pr.author_attachments) 
 		)
 	)
-} //check attachmentBelongToAnAuthor for 5 ActiveRecord
+} //check attachmentBelongToAnAuthor for 10 ActiveRecord
+
 pred commentExistAfterUserDel [pr: PreState, po:PostState, c:Comment, u:User] {
 	(c in pr.comments) && (u in pr.users) && ((u -> c) in pr.author_comments) && 
 	(u not in po.users') && (c  in po.comments') 
 } //run commentExistAfterUserDel for 10 ActiveRecord
+
 pred distrThroughRepForProj [pr: PreState, po:PostState, p:Project, r:Repository] { // 9
 	(r -> p) in pr.repositories_project
-} //run distrThroughRepForProj for 40 ActiveRecord
+} //run distrThroughRepForProj for 10 ActiveRecord
+
 pred roleCanHaveMultiMemb [p: PreState, r:Role, m:MemberRole, m2:MemberRole] { // 10
 	(r in p.roles) && (m in p.memberroles) && (m2 in p.memberroles) && (m != m2) && 
 	((m -> r) in p.member_roles_role) && 
 	((m2 -> r) in p.member_roles_role) 
-} //run roleCanHaveMultiMemb for 40 ActiveRecord
+} //run roleCanHaveMultiMemb for 10 ActiveRecord
+
 pred membCanHaveMultiRoles [p: PreState, r:Role, r2:Role, mr:MemberRole, mr2:MemberRole, m:Member]{ // 11
 	(r in p.roles) && (r2 in p.roles) && (mr in p.memberroles) && (mr2 in p.memberroles) && 
 	(m in p.members) && (r != r2) && 
 	((mr -> r) in p.member_roles_role) && ((mr2 -> r2) in p.member_roles_role) &&
 	((mr -> m) in p.member_roles_member) && ((mr2 -> m) in p.member_roles_member)
-} //run membCanHaveMultiRoles for 40 ActiveRecord
+} //run membCanHaveMultiRoles for 10 ActiveRecord
+
 pred memberHasProj [p: PreState, pr:Project, m:Member] { // 12
 	(m in p.members) && (pr in p.projects) && 
 	((m -> pr) in p.memberships_project)
-} //run memberHasProj for 5 ActiveRecord
+} //run memberHasProj for 10 ActiveRecord
+
 pred projCanHaveNoMembers [p: PreState, pr:Project]  { // 13
 	(pr in p.projects) &&
 	no p.memberships_project
-} //run projCanHaveNoMembers for 40 ActiveRecord, 1 Project
+} //run projCanHaveNoMembers for 10 ActiveRecord, 1 Project
+
 assert memberOfProjGotProjAsProj { // 14
 		all pr:PreState, m:Member, p:Project | (
 			( p in pr.projects) && 			
@@ -145,7 +151,7 @@ assert repositoryGoneWhenProjGone { // 15
 			(r not in po.repositories') &&
 		((r -> p) not in po.repositories_project') 
 	)
-} check repositoryGoneWhenProjGone for 40 ActiveRecord
+} //check repositoryGoneWhenProjGone for 40 ActiveRecord
 
 
 one sig PreState { 
