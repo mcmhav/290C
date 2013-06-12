@@ -40,7 +40,7 @@ pred siteCanHaveEvents [p: PreState, s:Site, e:Event, e2:Event] {
 			(e in p.events) && (e2 in p.events) && (s in p.sites) && (e != e2) &&
 			((e -> s) in p.events_site) && 
 			((e2 -> s) in p.events_site) 
-} run siteCanHaveEvents for 10 ActiveRecord
+} //run siteCanHaveEvents for 10 ActiveRecord
 
 assert eventInArticleBelongsToUser {
 	all p:PreState, a:Article, u:User, e:Event | 
@@ -48,7 +48,7 @@ assert eventInArticleBelongsToUser {
 		((u -> e) = p.user_events) && ((u -> a) = (p.updater_articles))) 
 		=> 
 		((e -> a) in p.events_article)
-} check eventInArticleBelongsToUser for 10 ActiveRecord
+} //check eventInArticleBelongsToUser for 10 ActiveRecord
 
 assert removeMembershipForDelUser {
 	all pr:PreState, p:PostState,  m:Membership, u:User | 
@@ -56,7 +56,7 @@ assert removeMembershipForDelUser {
 		(u not in p.users') && (u not in pr.admin_5s)) 
 		=> 
 		((m -> u) not in p.memberships_user')
-} check removeMembershipForDelUser for 10 ActiveRecord
+} //check removeMembershipForDelUser for 10 ActiveRecord
 
 assert removeSectionsAfterSiteDel {
 	all pr:PreState, p:PostState,  si:Site, s:Section | (
